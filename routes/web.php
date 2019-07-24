@@ -11,7 +11,4 @@
 |
 */
 
-Route::get('/', function () {
-    return config('app.timezone');
-    return view('welcome');
-});
+Route::get('/', 'PagesController@root')->name('root');
