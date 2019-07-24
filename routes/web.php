@@ -12,5 +12,6 @@
 */
 
 Route::get('/', function () {
+    return config('app.timezone');
     return view('welcome');
 });
