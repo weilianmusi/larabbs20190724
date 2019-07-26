@@ -10,7 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/test', function () {
+    $text = '<p>Test paragraph.</p><!-- Comment --> <a href="#fragment">Other text</a>';
+//    echo strip_tags($text);die;
+//    echo "\n";
 
+// 允许 <p> 和 <a>
+    echo strip_tags($text, '<p><a>');
+});
 Route::get('/', 'PagesController@root')->name('root');
 
 //Auth::routes();
