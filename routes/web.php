@@ -11,12 +11,13 @@
 |
 */
 Route::get('/test', function () {
-    $text = '<p>Test paragraph.</p><!-- Comment --> <a href="#fragment">Other text</a>';
-//    echo strip_tags($text);die;
-//    echo "\n";
-
-// 允许 <p> 和 <a>
-    echo strip_tags($text, '<p><a>');
+    return md5('123456');
+    $str = "Bill & 'Steve'";
+    echo htmlspecialchars($str, ENT_COMPAT); // 只转换双引号
+    echo "<br>";
+    echo htmlspecialchars($str, ENT_QUOTES); // 转换双引号和单引号
+    echo "<br>";
+    echo htmlspecialchars($str, ENT_NOQUOTES); // 不转换任何引号
 });
 Route::get('/', 'PagesController@root')->name('root');
 
@@ -44,3 +45,5 @@ Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit'
 //Route::patch('/users/{user}', 'UsersController@update')->name('users.update');
 Route::resource('topics', 'TopicsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
 Route::resource('categories', 'CategoriesController', ['only' => ['show']]);
+
+Route::post('/upload_image', 'TopicsController@uploadImage')->name('topics.upload_image');
