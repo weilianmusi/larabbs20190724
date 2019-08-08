@@ -16,8 +16,7 @@ class ReplysTableSeeder extends Seeder
         // 获取 faker 实力
         $faker = app(Faker\Generator::class);
 
-        $replys = factory(Reply::class)
-                        ->times(1000)
+        $replys = factory(Reply::class, 1000)
                         ->make()
                         ->each(function ($reply, $index) use ($user_ids, $topic_ids, $faker) {
                             $reply->user_id = $faker->randomElement($user_ids);
