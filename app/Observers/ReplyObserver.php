@@ -21,6 +21,11 @@ class ReplyObserver
         $topic->increment('reply_count', 1);
 
         // 通知作者话题被恢复
-        $topic->user->notify(new TopicReplied($reply));
+        $topic->user->topicNotify(new TopicReplied($reply));
+    }
+
+    public function deleted(Reply $reply)
+    {
+        $reply->topic->decrement('reply_count', 1);
     }
 }
