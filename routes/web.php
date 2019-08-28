@@ -11,6 +11,8 @@
 |
 */
 Route::get('/test', function () {
+    return app_path('Http/routes/administrator.php');
+    return config_path('administrator');
     return md5('123456');
     $str = "Bill & 'Steve'";
     echo htmlspecialchars($str, ENT_COMPAT); // 只转换双引号
