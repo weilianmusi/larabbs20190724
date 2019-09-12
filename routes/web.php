@@ -11,6 +11,8 @@
 |
 */
 Route::get('/test', function () {
+    $str = '[{&quot;id&quot;:1,&quot;name&quot;:&quot;manage_contents&quot;,&quot;guard_name&quot;:&quot;web&quot;,&quot;created_at&quot;:&quot;2019-08-16 14:49:36&quot;,&quot;updated_at&quot;:&quot;2019-08-16 14:49:36&quot;,&quot;pivot&quot;:{&quot;role_id&quot;:1,&quot;permission_id&quot;:1}},{&quot;id&quot;:2,&quot;name&quot;:&quot;manage_users&quot;,&quot;guard_name&quot;:&quot;web&quot;,&quot;created_at&quot;:&quot;2019-08-16 14:49:36&quot;,&quot;updated_at&quot;:&quot;2019-08-16 14:49:36&quot;,&quot;pivot&quot;:{&quot;role_id&quot;:1,&quot;permission_id&quot;:2}},{&quot;id&quot;:3,&quot;name&quot;:&quot;edit_settings&quot;,&quot;guard_name&quot;:&quot;web&quot;,&quot;created_at&quot;:&quot;2019-08-16 14:49:36&quot;,&quot;updated_at&quot;:&quot;2019-08-16 14:49:36&quot;,&quot;pivot&quot;:{&quot;role_id&quot;:1,&quot;permission_id&quot;:3}}]';
+    return html_entity_decode($str);
     return app_path('Http/routes/administrator.php');
     return config_path('administrator');
     return md5('123456');
