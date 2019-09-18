@@ -91,6 +91,9 @@ return array(
             'topics',
             'replies',
         ],
+        '站点设置' => [
+            'settings.site',
+        ],
     ],
 
     /*
